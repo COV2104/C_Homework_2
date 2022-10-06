@@ -28,5 +28,5 @@ try
 }
 catch
 {
-    Console.WriteLine("error");
+    Console.WriteLine("error: Необходимо вводить цифры");
 }
