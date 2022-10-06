@@ -3,18 +3,30 @@
 // 645 -> 5
 // 78 -> третьей цифры нет
 
-Console.WriteLine("Введите число: ");
-int num = Convert.ToInt32(Console.ReadLine());
-int num3 =0;
-if (num >= 100)
+string ThirdDigitNum()
 {
-    while (num >= 100)
+    Console.WriteLine("Введите число: ");
+    int num = Convert.ToInt32(Console.ReadLine());
+    string result = "";
+    int num1 = Math.Abs(num);
+    int num3 = 0;
+    if (num1 >= 100)
     {
-        num3 = num %10;
-        num = num /10;
+        while (num1 >= 100)
+        {
+            num3 = num1 % 10;
+            num1 = num1 / 10;
+        }
+        result = $"Третья цифра в числе = {num3}";
     }
-    Console.WriteLine ($"Третья цифра в числе = {num3}");
+    else result = "Третьей цифры в числе нет ";
+    return result;
 }
-
-
-else Console.WriteLine("Третьей цифры в числе нет ");
+try
+{
+    Console.WriteLine(ThirdDigitNum());
+}
+catch
+{
+    Console.WriteLine("error");
+}
