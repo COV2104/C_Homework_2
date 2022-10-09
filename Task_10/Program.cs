@@ -1,24 +1,32 @@
-﻿// Задача 10: Напишите программу, которая принимает на вход трёхзначное число и 
+﻿// Задача 10: Напишите программу, которая принимает на вход трёхзначное число и
 // на выходе показывает вторую цифру этого числа.
 // 456 -> 5
+
+// 1 вариант:
+
+Console.WriteLine("Введите трехзначное число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+number = number / 10;
+int number2 = number % 10;
+Console.WriteLine($"Вторая цифра в числе = {number2}");
+
+// 2 вариант:
 
 string SecondDigitNum()
 {
     Console.WriteLine("Введите число: ");
-    int num = Convert.ToInt32(Console.ReadLine());
-    string result = "";
-    int num1 = Math.Abs(num);
-    int num3 = 0;
-    if (num1 >= 10)
+    int number = Math.Abs(Convert.ToInt32(Console.ReadLine()));
+    string result = "Второй цифры в числе нет ";
+    int number2 = 0;
+    if (number >= 10)
     {
-        while (num1 >= 10)
+        while (number >= 10)
         {
-            num3 = num1 % 10;
-            num1 = num1 / 10;
+            number2 = number % 10;
+            number = number / 10;
         }
-        result = $"Вторая цифра в числе = {num3}";
+        result = $"Вторая цифра в числе = {number2}";
     }
-    else result = "Второй цифры в числе нет ";
     return result;
 }
 try
